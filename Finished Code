@@ -1,0 +1,46 @@
+###Step 1:
+#Define a class
+class ItemToPurchase:
+  #default constructor
+  def __init__(self, item_name = "none", item_price = 0, item_quantity = 0):
+    self.item_name = item_name
+    self.item_price = item_price
+    self.item_quantity = item_quantity
+
+  #Method to print item cost
+  def calc_item_cost(self):
+    total_cost = self.item_price * self.item_quantity
+    print('{} {} @ ${} = ${}'.format(self.item_name, self.item_price, self.item_quantity, total_cost))
+    return total_cost
+
+#Example Usage:
+item = ItemToPurchase("Bottled Water", 1.0, 10)
+item.calc_item_cost()
+
+###Step 2:
+def function():
+  #Prompting for item 1
+  print('Item 1')
+  item1_name = input('Enter item name:\n')
+  item1_price = float(input('Enter item price:\n'))
+  item1_quantity = int(input('Enter item quantity:\n'))
+
+  item1 = ItemToPurchase(item1_name, item1_price, item1_quantity)
+
+  #Prompting for item 2
+  print('Item 2')
+  item2_name = input('Enter item name:\n')
+  item2_price = float(input('Enter item price:\n'))
+  item2_quantity = int(input('Enter item quantity:\n'))
+
+  item2 = ItemToPurchase(item2_name, item2_price, item2_quantity)
+
+###Step 3
+#Adding the costs
+  print('TOTAL COST')
+  item1_cost = item1.calc_item_cost()
+  item2_cost = item2.calc_item_cost()
+  total_cost = item1_cost + item2_cost
+  print('Total:', total_cost)
+
+function()
